@@ -1,0 +1,20 @@
+# Core RAG stack
+langchain==0.3.23
+langchain-openai==0.3.12
+langchain-chroma==0.2.3
+chromadb==0.6.3
+
+# Text & tokenization
+langchain-text-splitters==0.3.8
+tiktoken==0.9.0
+pypdf==5.4.0
+
+# UI
+gradio==5.25.1
+
+# Env
+python-dotenv==1.1.0
+
+# Dev (اختياري)
+ruff==0.11.5
+pytest==8.3.3

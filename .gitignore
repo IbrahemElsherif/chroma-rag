@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Data / vector store
+vectorstore/
+data/processed/
+*.db
+*.sqlite
+
+# Gradio
+gradio_cached_examples/
