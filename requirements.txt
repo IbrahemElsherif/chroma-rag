@@ -1,23 +1,28 @@
 # Core RAG stack
-langchain
-langchain-openai==0.3.12
-langchain-chroma==0.2.3
-chromadb==0.6.3
-langchain-community
-# Text & tokenization
-langchain-text-splitters==0.3.8
-tiktoken==0.9.0
-pypdf==5.4.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-chroma>=0.2.0
+chromadb>=0.6.0
+langchain-community>=0.3.0
 
-# UI
-gradio==5.25.1
+# Text & tokenization
+langchain-text-splitters>=0.3.0
+tiktoken>=0.8.0
+pypdf>=5.0.0
+
+# UI - UPDATED
+gradio>=5.25.0
+# FastAPI - UPDATED for compatibility
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
 
 # Env
-python-dotenv==1.1.0
-gunicorn==21.2.0
-# Dev 
-ruff==0.11.5
-pytest==8.3.3
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
+python-dotenv>=1.0.0
+
+# Production server (choose ONE)
+gunicorn>=23.0.0  # Only if using as process manager
+
+# Dev
+ruff>=0.8.0
+pytest>=8.0.0
