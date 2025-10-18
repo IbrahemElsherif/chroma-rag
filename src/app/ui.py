@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import os 
 import gradio as gr
 from .settings import get_settings, Settings
 from .rag_chain import RAGChain
@@ -91,11 +91,18 @@ def launch() -> None:
         description="Ask questions based on your indexed documents.",
         cache_examples=False,
     )
-
-    # Launch the Gradio app with optional share, authentication, and network parameters.
     demo.launch(
-        share=settings.gradio_share,
+        share=False,  # Disable share for production
         auth=auth,
-        inbrowser=False,           # Set to True to auto-open browser tab
-        server_name="0.0.0.0",     # Listen on all interfaces
+        inbrowser=False,
+        server_name="0.0.0.0",
+        server_port=int(os.getenv("PORT", 7860)),  # Use Render's PORT
+        show_error=True
     )
+    # # Launch the Gradio app with optional share, authentication, and network parameters.
+    # demo.launch(
+    #     share=settings.gradio_share,
+    #     auth=auth,
+    #     inbrowser=False,           # Set to True to auto-open browser tab
+    #     server_name="0.0.0.0",     # Listen on all interfaces
+    # )
