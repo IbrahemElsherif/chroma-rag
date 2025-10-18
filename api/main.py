@@ -4,6 +4,7 @@ import time
 import json
 import threading
 from typing import List, Dict, Any, Optional, Generator, Tuple
+import uvicorn
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -375,3 +376,7 @@ async def ingest(
         _cache_store.clear()
 
     return {"added_chunks": added}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
